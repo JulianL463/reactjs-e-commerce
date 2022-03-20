@@ -1,0 +1,21 @@
+
+/* rgb(0,165,212) Blue
+rgb(65,65,67) DarkGrey */
+nav{
+    display: flex;
+    justify-content:space-between;
+    justify-items: right;
+    align-items: center;
+}
+
+.navLinks li{
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.navLinks li a{
+    color: rgb(65,65,67);
+    text-decoration: none;
+    font-weight: 600;
+}
+
