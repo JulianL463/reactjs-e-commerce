@@ -1,20 +1,23 @@
 import React from "react";
-import './NavBar.css';
 import logo from '../imgs/logobuyit-small.png';
+import Burger from "./Burger";
+import { Nav } from "./styles/NavBar.styled";
 
 
 const NavBar = () => {
     return(
-        <nav>
-            <img src={logo} alt=""/>
-            <ul className="navLinks">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Tablets</a></li>
-                <li><a href="#">Notebooks</a></li>
-                <li><a href="#">PC de escritorio</a></li>
-            </ul>
-            <div className="hamburger"><img src="hambIcon" alt="" /></div>
-        </nav>
+        <>
+            <Nav>
+                <img src={logo} alt=""/>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Notebooks</a></li>
+                    <li><a href="#">PC de escritorio</a></li>
+                </ul>
+                <Burger />
+            </Nav>
+        </>
     )
 }
 
