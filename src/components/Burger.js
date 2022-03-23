@@ -1,13 +1,12 @@
 import React from 'react'
-import { StyledBurger } from './styles/NavBar.styled';
 
-const Burger = () => {
+const Burger = ({className}) => {
   return (
-    <StyledBurger>
+    <div className={className}>
         <div></div>
         <div></div>
         <div></div>
-    </StyledBurger>
+    </div>
   )
 }
 
