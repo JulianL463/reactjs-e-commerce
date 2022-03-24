@@ -44,6 +44,7 @@ export const Nav = styled.nav`
 
     ${StyledBurger}{
         order: 0;
+        justify-self: left;
     }
     img{
         order: 1;

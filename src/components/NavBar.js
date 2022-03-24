@@ -1,5 +1,4 @@
 import React from "react";
-import logo from '../imgs/logobuyit-small.png';
 import { Nav, StyledBurger, StyledCartWidget } from "./styles/NavBar.styled";
 import StyledContainer from "./styles/Container.styled";
 
@@ -8,7 +7,7 @@ const NavBar = () => {
     return(
         <StyledContainer>
             <Nav>
-                    <img src={logo} alt=""/>
+                    <img src='./imgs/logobuyit-small.png' alt=""/>
                     <ul>
                         <li><a href="#">Inicio</a></li>
                         <li><a href="#">Tablets</a></li>
