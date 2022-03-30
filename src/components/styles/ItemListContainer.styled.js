@@ -7,6 +7,7 @@ export const StyledItemListContainer = styled(ItemListContainer)`
 
     h2{
         background-color: ${({theme}) => theme.colors.primary};
+        font-weight: 400;
     }
 
 `;

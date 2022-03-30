@@ -11,9 +11,8 @@ export const StyledBurger = styled(Burger)`
     flex-flow: column;
     justify-content: space-around;
     
-    
     div{
-        background-color: ${({theme})=>theme.colors.secondary};
+        background-color: ${({theme})=>theme.colors.main};
         height: 4px;
         width: 100%;
         border-radius: 2px;
@@ -28,15 +27,22 @@ export const StyledBurger = styled(Burger)`
 export const StyledCartWidget = styled(CartWidget)`
     height: 25px;
     width: auto;
+    color: ${({theme})=>theme.colors.main};
 `;
 
 export const Nav = styled.nav`
+    position:sticky;
+    top:0;
+    z-index:10;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     justify-content:space-between;
     justify-items: center;
     align-items: center;
-    padding: 5px 0;
+    padding: 5px 1rem;
+
+    background-color: ${({theme}) => theme.colors.transparent.main};
+    backdrop-filter: blur(10px);
 
     ul{
         display: none;
@@ -66,9 +72,8 @@ export const Nav = styled.nav`
             margin: 0 1rem;
             
             a{
-                color: ${({theme})=>theme.colors.secondary};
+                color: ${({theme})=>theme.colors.main};
                 text-decoration: none;
-                font-weight: 600;
             }
         }
     }

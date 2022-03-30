@@ -1,10 +1,11 @@
 import { React, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
-const ItemCount = ({ className, stock, initial, onAdd }) => {
+const Item = ({ className, product, initial, onAdd }) => {
+
+    const {tittle, prodImg, price, stock} = product;
 
     const [cant, setcant] = useState(initial);
-    const [itemStock, setitemStock] = useState(stock);
 
     const addOne = () =>{
         cant<stock && setcant(cant+1);
@@ -14,25 +15,28 @@ const ItemCount = ({ className, stock, initial, onAdd }) => {
     }
 
     const addToCart = () => {
-        if(cant<=itemStock){
+        if(cant<=stock){
             onAdd(cant);
-            setitemStock(itemStock-cant);
         }
     }
 
     return (
         <div className= {className}>
-            <h3>Titulo</h3>
+            <img src={prodImg} alt="" />
+            <h3>{tittle}</h3>
             <div>
-                <div>
+                <div className="itemCount">
                     <FaMinus onClick={subtractOne}/>
-                    <div>{cant}</div>
+                    <h5 className="cant">{cant}</h5>
                     <FaPlus onClick={addOne}/>
                 </div>
-                <button onClick={addToCart}>AGREGAR AL CARRITO</button>
+                <div className="buy">
+                    <h5 className="price">${price*cant}</h5>
+                    <button onClick={addToCart}>COMPRAR</button>
+                </div>
             </div>
         </div>
     )
 }
 
-export default ItemCount
+export default Item

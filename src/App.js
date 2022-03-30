@@ -6,9 +6,16 @@ import { StyledItemListContainer } from './components/styles/ItemListContainer.s
 const theme = {
   colors: {
       main: 'white',
-      test: 'red',
       primary: 'rgb(0,165,212)',
+      primary: 'rgb(0,82,106)',
       secondary: 'rgb(65,65,67)',
+
+      transparent: {
+        main: 'rgba(255, 255, 255, 0.2)',
+        lightblue: 'rgba(208, 247, 255, 0.2)',
+        primary: 'rgb(0,165,212,0.5)',
+        secondary: 'rgb(65,65,67,0.2)',
+      }
   }
 }
 
