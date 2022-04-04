@@ -16,7 +16,9 @@ const GlobalStyles = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         letter-spacing: 0.2rem;
         background-color: black;
-        color: ${({theme})=>theme.colors.secondary};
+        color: ${({theme})=>theme.colors.main};
+        background-image: url('./imgs/6875927.jpg');
+        background-size: cover;
     }
 
     code {

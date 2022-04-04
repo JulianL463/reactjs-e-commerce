@@ -9,8 +9,7 @@ export const StyledItem = styled(Item)`
     overflow: hidden;
 
     /* border: 1px solid ${({theme}) => theme.colors.secondary}; */
-
-    color: ${({theme}) => theme.colors.secondary};
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
     width: 15rem;
     height: 18.75rem;
@@ -34,7 +33,6 @@ export const StyledItem = styled(Item)`
         padding: 5px 0;
 
         background-color: ${({theme}) => theme.colors.transparent.lightblue};
-        color: ${({theme}) => theme.colors.main};
         backdrop-filter: blur(2px);
     }
 
@@ -47,7 +45,6 @@ export const StyledItem = styled(Item)`
             height: 2.2rem;
 
             background-color: ${({theme}) => theme.colors.transparent.lightblue};
-            color: ${({theme}) => theme.colors.main};
             backdrop-filter: blur(2px);
 
 
@@ -77,7 +74,6 @@ export const StyledItem = styled(Item)`
                 line-height:3.5rem;
 
                 background-color: ${({theme}) => theme.colors.transparent.lightblue};
-                color: ${({theme}) => theme.colors.main};
                 backdrop-filter: blur(2px);
             }
 
@@ -94,7 +90,6 @@ export const StyledItem = styled(Item)`
                 background-color: ${({theme}) => theme.colors.transparent.lightblue};
                 color: ${({theme}) => theme.colors.main};
                 backdrop-filter: blur(2px);
-                color: ${({theme}) => theme.colors.main};
                 
                 &:active{
                     font-size: 0.98rem;

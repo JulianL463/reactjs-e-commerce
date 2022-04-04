@@ -7,6 +7,7 @@ const StyledItemList = styled(ItemList)`
     grid-template-columns: 1fr; //repeat(3, 1fr);
     justify-content: center;
     
+    
 
     margin: 1rem auto;
 

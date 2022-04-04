@@ -3,7 +3,7 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 
 const Item = ({ className, product, initial, onAdd }) => {
 
-    const {tittle, prodImg, price, stock} = product;
+    const {title, prodImg, price, stock} = product;
 
     const [cant, setcant] = useState(initial);
 
@@ -23,7 +23,7 @@ const Item = ({ className, product, initial, onAdd }) => {
     return (
         <div className= {className}>
             <img src={prodImg} alt="" />
-            <h3>{tittle}</h3>
+            <h3>{title}</h3>
             <div>
                 <div className="itemCount">
                     <FaMinus onClick={subtractOne}/>
