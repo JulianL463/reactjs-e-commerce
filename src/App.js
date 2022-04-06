@@ -36,6 +36,7 @@ const App = () => {
           <Route path='/details/:id' element = {<ItemDetailContainer />} />
           <Route path='/categories/:id' element = {<StyledItemListContainer user={user.alias} />} />
           <Route path='/cart' element = {<h1>Cart</h1>} />
+          <Route path='/reactjs-e-commerceJulianLopez/' element = {<StyledItemListContainer user={user.alias} />} />
           <Route path='*' element = {<h1>Error 404 No se encontró la página</h1>} />
         </Routes>
       </>
