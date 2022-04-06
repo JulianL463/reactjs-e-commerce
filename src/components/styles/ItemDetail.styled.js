@@ -120,9 +120,6 @@ export const StyledItemDetail = styled(ItemDetail)`
             }
         }   
 
-        /* @media (min-width: 725px){
-        grid-template-columns: repeat(2, 18rem);
-        } */
         @media (min-width: 1100px){
              grid-template-columns: 1fr 1fr;
              grid-template-rows: 1fr;

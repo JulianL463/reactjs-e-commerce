@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { React, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './components/styles/Global.styled.js';
 import NavBar from './components/NavBar.js';

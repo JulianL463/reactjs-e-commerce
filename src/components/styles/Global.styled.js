@@ -18,8 +18,7 @@ const GlobalStyles = createGlobalStyle`
         background-color: black;
         color: ${({theme})=>theme.colors.main};
         background-image: url('/imgs/6875927.jpg');
-        background-repeat: no-repeat;
-        background-size: auto 100%;
+        background-size: auto 100vh;
     }
 
     code {

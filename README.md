@@ -1,11 +1,9 @@
 # ReactJS E-commerce
 
 Proyecto práctico realizado en el curso de RactJS de Coder House.
+E-commerce ficticio de venta de productos electrónicos.
 
-# `npm start`
+# Extra Dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Styled-components 5.3.3
+-React-icons 4.3.1

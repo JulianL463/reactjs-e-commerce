@@ -24,10 +24,12 @@ export const StyledBurger = styled(Burger)`
 `;
 
 
-export const StyledCartWidget = styled(CartWidget)`
-    height: 25px;
-    width: auto;
+export const StyledCartWidget = styled(CartWidget)` 
     color: ${({theme})=>theme.colors.main};
+    div{
+        height: 25px;
+        width: auto;
+    }
 `;
 
 export const Nav = styled.nav`
@@ -54,6 +56,7 @@ export const Nav = styled.nav`
     }
     .logoLink{
         order: 1;
+        height:40px;
     }
     ${StyledCartWidget}{
         order: 2;
