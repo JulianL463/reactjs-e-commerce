@@ -17,8 +17,9 @@ const GlobalStyles = createGlobalStyle`
         letter-spacing: 0.2rem;
         background-color: black;
         color: ${({theme})=>theme.colors.main};
-        background-image: url('./imgs/6875927.jpg');
-        background-size: cover;
+        background-image: url('/imgs/6875927.jpg');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
     }
 
     code {

@@ -4,11 +4,11 @@ import GlobalStyles from './components/styles/Global.styled.js';
 import NavBar from './components/NavBar.js';
 import ItemDetailContainer from './components/ItemDetailContainer.js';
 import { StyledItemListContainer } from './components/styles/ItemListContainer.styled.js';
+import { Routes, Route } from 'react-router-dom';
 
 const theme = {
   colors: {
       main: 'white',
-      // primary: 'rgb(0,165,212)',
       primary: 'rgb(0, 82, 106)',
       secondary: 'rgb(65,65,67)',
 
@@ -33,9 +33,13 @@ const App = () => {
       <>
         <GlobalStyles />
         <NavBar />
-        { showList ? <StyledItemListContainer user={user.alias} />
-          : <ItemDetailContainer />
-        }
+        <Routes>
+          <Route path='/' element = {<StyledItemListContainer user={user.alias} />} />
+          <Route path='/details/:id' element = {<ItemDetailContainer />} />
+          <Route path='/categories/:id' element = {<StyledItemListContainer user={user.alias} />} />
+          <Route path='/cart' element = {<h1>cart</h1>} />
+          <Route path='*' element = {<h1>Error 404 No se encontró la página</h1>} />
+        </Routes>
       </>
     </ThemeProvider>
   );

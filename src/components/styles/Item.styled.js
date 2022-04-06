@@ -8,23 +8,28 @@ export const StyledItem = styled(Item)`
     margin: 2rem auto;
     overflow: hidden;
 
-    /* border: 1px solid ${({theme}) => theme.colors.secondary}; */
+    border: 1px solid ${({ theme }) => theme.colors.secondary};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
     width: 15rem;
     height: 18.75rem;
 
     user-select: none;
-
     position: relative;
-
-    img{
+    
+    .detailLink{
         position: absolute;
-        background-color: black;
+        top:0;
         height: 100%;
         left:50%;
-        transform: translateX(-50%);
+
+        img{
+            background-color: black;
+            height: 100%;
+            transform: translateX(-50%);
+        }
     }
+    
 
     h3{
         font-size: 1.1rem;
@@ -32,7 +37,7 @@ export const StyledItem = styled(Item)`
         
         padding: 5px 0;
 
-        background-color: ${({theme}) => theme.colors.transparent.lightblue};
+        background-color: ${({ theme }) => theme.colors.transparent.lightblue};
         backdrop-filter: blur(2px);
     }
 
@@ -44,7 +49,7 @@ export const StyledItem = styled(Item)`
             padding: 0 2rem;
             height: 2.2rem;
 
-            background-color: ${({theme}) => theme.colors.transparent.lightblue};
+            background-color: ${({ theme }) => theme.colors.transparent.lightblue};
             backdrop-filter: blur(2px);
 
 
@@ -73,7 +78,7 @@ export const StyledItem = styled(Item)`
                 font-size: 1.1rem;
                 line-height:3.5rem;
 
-                background-color: ${({theme}) => theme.colors.transparent.lightblue};
+                background-color: ${({ theme }) => theme.colors.transparent.lightblue};
                 backdrop-filter: blur(2px);
             }
 
@@ -87,8 +92,8 @@ export const StyledItem = styled(Item)`
                 letter-spacing: 0.2rem;
 
                 border: none;
-                background-color: ${({theme}) => theme.colors.transparent.lightblue};
-                color: ${({theme}) => theme.colors.main};
+                background-color: ${({ theme }) => theme.colors.transparent.lightblue};
+                color: ${({ theme }) => theme.colors.main};
                 backdrop-filter: blur(2px);
                 
                 &:active{

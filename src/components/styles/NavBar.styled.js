@@ -52,7 +52,7 @@ export const Nav = styled.nav`
         order: 0;
         justify-self: left;
     }
-    img{
+    .logoLink{
         order: 1;
     }
     ${StyledCartWidget}{
@@ -61,7 +61,7 @@ export const Nav = styled.nav`
     }
 
     @media (min-width: 725px){
-        img{
+        .logoLink{
             order: 0;
         }
         ul{

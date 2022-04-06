@@ -1,9 +1,10 @@
 import { React, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Item = ({ className, product, initial, onAdd }) => {
 
-    const {title, prodImg, price, stock} = product;
+    const {id, title, prodImg, price, stock} = product;
 
     const [cant, setcant] = useState(initial);
 
@@ -22,7 +23,7 @@ const Item = ({ className, product, initial, onAdd }) => {
 
     return (
         <div className= {className}>
-            <img src={prodImg} alt="" />
+            <Link to={`/details/${id}`} className="detailLink"><img src={prodImg} alt="" /></Link>
             <h3>{title}</h3>
             <div>
                 <div className="itemCount">

@@ -47,6 +47,7 @@ export const StyledItemDetail = styled(ItemDetail)`
             img{
                 width:100%;
                 height:100%;
+                background-color:black;
                 box-sizing:border-box;
                 border: 1px solid ${({theme}) => theme.colors.transparent.lightblue};
             }

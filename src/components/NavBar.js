@@ -1,17 +1,18 @@
 import React from "react";
 import { Nav, StyledBurger, StyledCartWidget } from "./styles/NavBar.styled";
 import StyledContainer from "./styles/Container.styled";
+import { NavLink, Link } from "react-router-dom";
 
 
 const NavBar = () => {
     return(
         <Nav>
-                <img src='./imgs/logobuyit-small.png' alt=""/>
+                <Link to='/' className="logoLink"><img src='/imgs/logobuyit-small.png' alt=""/></Link>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Tablets</a></li>
-                    <li><a href="#">Notebooks</a></li>
-                    <li><a href="#">PC de escritorio</a></li>
+                    <li><NavLink to="/">Inicio</NavLink></li>
+                    <li><NavLink to="categories/tablets">Tablets</NavLink></li>
+                    <li><NavLink to="categories/notebooks">Notebooks</NavLink></li>
+                    <li><NavLink to="categories/pc">PC de escritorio</NavLink></li>
                 </ul>
                 <StyledCartWidget/>
                 <StyledBurger />
