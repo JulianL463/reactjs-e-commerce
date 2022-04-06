@@ -13,11 +13,11 @@ const ItemListContainer = ({className, user}) => {
   useEffect(() => {
     setshow(false);
 
-    fetch('https://run.mocky.io/v3/296258ec-f866-4469-8d02-1949952dce6e')
+    fetch('https://run.mocky.io/v3/5100376d-bbab-416e-8127-65ad2344d6a4')
     .then((res)=> res.json())
     .then((prods)=>{
-      if(prods.some(prod => prod.category == id)){
-        setproducts(prods.filter(prod => prod.category == id));
+      if(prods.some(prod => prod.category === id)){
+        setproducts(prods.filter(prod => prod.category === id));
       }else{
         setproducts(prods);
       }

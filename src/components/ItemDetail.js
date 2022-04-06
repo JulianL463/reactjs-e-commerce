@@ -3,7 +3,7 @@ import { FaMinus, FaPlus, FaCartArrowDown} from "react-icons/fa";
 
 const ItemDetail = ({className, item}) => {
 
-    const {title, prodImg, price, description, stock} = item;
+    const {title, prodImg, price, description} = item;
 
     return (
         <div className={className}>

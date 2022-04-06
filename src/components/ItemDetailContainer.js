@@ -12,9 +12,12 @@ const ItemDetailContainer = () => {
   const [item, setitem] = useState({});
   const [show, setshow] = useState(false);
 
-  const getItem = () => {
+  // const getItem = () => {
+    
+  // }
 
-    fetch('https://run.mocky.io/v3/296258ec-f866-4469-8d02-1949952dce6e')
+  useEffect(() => {
+    fetch('https://run.mocky.io/v3/5100376d-bbab-416e-8127-65ad2344d6a4')
     .then((res)=> res.json())
     .then((prods)=>{
       setitem(prods.find(prods => prods.id === parseInt(id)));
@@ -25,11 +28,7 @@ const ItemDetailContainer = () => {
     .finally(()=>{
       setshow(true);
     })
-  }
-
-  useEffect(() => {
-    getItem();
-  }, []);
+  }, [id]);
 
   return (
     <>
