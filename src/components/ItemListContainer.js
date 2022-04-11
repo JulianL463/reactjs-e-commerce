@@ -38,7 +38,7 @@ const ItemListContainer = ({className, user}) => {
   }
 
   return (
-    <div className={className}>  
+    <div className={className}>
       <h2>Bienvenido {user}!</h2>
       {show ? <StyledItemList products={products} onAdd= {onAdd} /> 
       : <StyledLoader/>}

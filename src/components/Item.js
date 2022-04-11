@@ -1,40 +1,19 @@
-import { React, useState } from "react";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import React from "react";
 import { Link } from "react-router-dom";
 
-const Item = ({ className, product, initial, onAdd }) => {
+const Item = ({ className, product, initial }) => {
 
-    const {id, title, prodImg, price, stock} = product;
-
-    const [cant, setcant] = useState(initial);
-
-    const addOne = () =>{
-        cant<stock && setcant(cant+1);
-    }
-    const subtractOne = () =>{
-        cant>1 && setcant(cant-1);
-    }
-
-    const addToCart = () => {
-        if(cant<=stock){
-            onAdd(cant);
-        }
-    }
+    const { id, title, prodImg, price } = product;
 
     return (
-        <div className= {className}>
+        <div className={className}>
             <Link to={`/details/${id}`} className="detailLink"><img src={prodImg} alt="" /></Link>
-            <h3>{title}</h3>
-            <div>
-                <div className="itemCount">
-                    <FaMinus onClick={subtractOne}/>
-                    <h5 className="cant">{cant}</h5>
-                    <FaPlus onClick={addOne}/>
-                </div>
-                <div className="buy">
-                    <h5 className="price">${price*cant}</h5>
-                    <button onClick={addToCart}>COMPRAR</button>
-                </div>
+            <h3 className="frosted">{title}</h3>
+            <div className="buy">
+                <h5 className="price frosted">${price}</h5>
+                <Link to={`/details/${id}`} className="buyLink">
+                    <button className="frosted">COMPRAR</button>
+                </Link>
             </div>
         </div>
     )

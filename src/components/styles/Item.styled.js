@@ -16,6 +16,11 @@ export const StyledItem = styled(Item)`
 
     user-select: none;
     position: relative;
+
+    .frosted{
+        background-color: ${({ theme }) => theme.colors.transparent.lightblue};
+        backdrop-filter: blur(5px);
+    }
     
     .detailLink{
         position: absolute;
@@ -36,70 +41,45 @@ export const StyledItem = styled(Item)`
         line-height: 1.2rem;
         
         padding: 5px 0;
-
-        background-color: ${({ theme }) => theme.colors.transparent.lightblue};
-        backdrop-filter: blur(2px);
     }
 
-    div{
-        .itemCount{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-            height: 2.2rem;
+    .buy{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 3.5rem;
+        margin: 2px 0 0 0;
 
-            background-color: ${({ theme }) => theme.colors.transparent.lightblue};
-            backdrop-filter: blur(2px);
+        .price{
+            width: 49%;
+            height: 100%;
 
+            font-size: 1.1rem;
+            line-height:3.5rem;
 
-            .cant{
-                width: 50px;
-                height: 1.5rem;
-                font-size: 1.2rem;
-                line-height:1.5rem;
-                letter-spacing:0;
-                border-radius:0.75rem;
-                background-color: rgba(20, 20, 20, 0.6);
-            }
         }
-        .buy{
-            display:flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 3.5rem;
-            margin: 2px 0 0 0;
 
-            .price{
-                width: 49%;
-                height: 100%;
-                margin: 2px 0 0 0;
-
-                font-size: 1.1rem;
-                line-height:3.5rem;
-
-                background-color: ${({ theme }) => theme.colors.transparent.lightblue};
-                backdrop-filter: blur(2px);
-            }
+        .buyLink {
+            width: 49%;
+            height: 100%;
 
             button{
-                width: 49%;
+                cursor: pointer;
+                width: 100%;
                 height: 100%;
-                margin: 2px 0 0 0;
 
                 font-family: 'Saira Condensed','Inria Sans', 'Times New Roman', sans-serif, -apple-system, BlinkMacSystemFont;//'Saira Condensed',
                 font-size: 1.1rem;
                 letter-spacing: 0.2rem;
 
                 border: none;
-                background-color: ${({ theme }) => theme.colors.transparent.lightblue};
                 color: ${({ theme }) => theme.colors.main};
-                backdrop-filter: blur(2px);
                 
                 &:active{
                     font-size: 0.98rem;
                 }
-            }
+            }   
         }
     }
+    
 `

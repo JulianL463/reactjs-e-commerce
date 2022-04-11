@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
         background-color: black;
         color: ${({theme})=>theme.colors.main};
         background-image: url('https://iili.io/MN1I1I.png');
-        background-size: auto 100vh;
+        background-size: 100% 100vh;
     }
 
     code {

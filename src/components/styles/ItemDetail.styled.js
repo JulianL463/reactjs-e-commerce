@@ -7,7 +7,7 @@ export const StyledItemDetail = styled(ItemDetail)`
     padding: 5px;
     margin:auto;
     
-    color: 1px solid ${({theme}) => theme.colors.main};
+    color: 1px solid ${({ theme }) => theme.colors.main};
 
     h2{
         font-size: 2rem;
@@ -22,7 +22,7 @@ export const StyledItemDetail = styled(ItemDetail)`
     }
 
     .frosted{
-        background-color: ${({theme}) => theme.colors.transparent.lightblue};
+        background-color: ${({ theme }) => theme.colors.transparent.lightblue};
         backdrop-filter: blur(5px);
     }
 
@@ -49,19 +49,18 @@ export const StyledItemDetail = styled(ItemDetail)`
                 height:100%;
                 background-color:black;
                 box-sizing:border-box;
-                border: 1px solid ${({theme}) => theme.colors.transparent.lightblue};
+                border: 1px solid ${({ theme }) => theme.colors.transparent.lightblue};
             }
             
         }
         .dataContainer{
             display:grid;
             
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr 4fr 1fr;
             grid-gap: 5px;
 
             .itemTitle{
-                grid-column: 1 / 3 ;
                 width:100%;
                 height:100%;
 
@@ -93,7 +92,6 @@ export const StyledItemDetail = styled(ItemDetail)`
                 }
             }
             .itemDescription{
-                grid-column: 1 / 3 ;
                 width:100%;
                 height:100%;
                 
@@ -117,6 +115,29 @@ export const StyledItemDetail = styled(ItemDetail)`
                 display:flex;
                 align-items:center;
                 justify-content:center;
+
+                text-decoration: none;
+
+                margin: 0;
+                button{
+                    cursor: pointer;
+                    width: 100%;
+                    height: 100%;
+
+                    font-family: 'Saira Condensed','Inria Sans', 'Times New Roman', sans-serif, -apple-system, BlinkMacSystemFont;//'Saira Condensed',
+                    font-size: 2rem;
+                    letter-spacing: 0.2rem;
+                   
+
+                    border: none;
+                    color: ${({ theme }) => theme.colors.main};
+                    background:none;
+                    
+                    &:active{
+                        font-size: 1.9rem;
+                    }
+                }
+                
             }
         }   
 
@@ -135,20 +156,6 @@ export const StyledItemDetail = styled(ItemDetail)`
              }
              
         }
-    }
-
-    .specsContainer{
-        width: 100%;
-        min-height: 70vh;
-        margin-top: 2rem;
-        ul{   
-            padding:50px;
-        }
-    }
-    
-    @media (min-width: 725px){
-        max-width: 80rem;
-        padding: 5rem;
     }
     
 `

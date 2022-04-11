@@ -4,9 +4,8 @@ import ItemList from '../ItemList'
 const StyledItemList = styled(ItemList)`
 
     display: grid;
-    grid-template-columns: 1fr; //repeat(3, 1fr);
+    grid-template-columns: 1fr;
     justify-content: center;
-    
     
 
     margin: 1rem auto;
