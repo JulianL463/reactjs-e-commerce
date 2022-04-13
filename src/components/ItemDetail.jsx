@@ -1,23 +1,25 @@
-import { React, useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { StyledItemCount } from './styles/ItemCount.styled';
+import { CartContext } from './CartContext';
 
 const ItemDetail = ({ className, item }) => {
 
-    const { id, title, prodImg, price, description, stock } = item;
+    const { title, prodImg, price, description, stock } = item;
+
+    const { addToCart} = useContext(CartContext);
 
     const [purchase, setPurchase] = useState({});
 
 
     const onAdd = (cant) => {
-        let purchasedItem = {
-            id: id,
-            cant: cant,
-            price: price,
-            added: true,
-        };
+
+        const { prodImg, description, ...purchasedItem } = { ...item, cant: cant };
+
         setPurchase(purchasedItem);
-        
+        addToCart(purchasedItem);
+
+
         cant > 1 ? console.log(`Se agregaron ${cant} productos al carrito`)
             : console.log(`Se agrego ${cant} producto al carrito`);
     }
@@ -38,12 +40,12 @@ const ItemDetail = ({ className, item }) => {
                     <div className='itemDescription frosted'>
                         <p>{description}</p>
                     </div>
-                    {!purchase.added ? <div className='itemCount'>
+                    {!purchase.cant ? <div className='itemCount'>
                         <StyledItemCount onAdd={onAdd} initial={1} stock={stock} />
                     </div>
-                    :<Link to='/cart' className='itemBuy frosted'>
-                        <button>COMPRAR</button>
-                    </Link>}
+                        : <Link to='/cart' className='itemBuy frosted'>
+                            <button>COMPRAR</button>
+                        </Link>}
                 </div>
             </div>
         </div>
