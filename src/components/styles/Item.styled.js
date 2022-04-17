@@ -17,10 +17,6 @@ export const StyledItem = styled(Item)`
     user-select: none;
     position: relative;
 
-    .frosted{
-        background-color: ${({ theme }) => theme.colors.transparent.lightblue};
-        backdrop-filter: blur(5px);
-    }
     
     .detailLink{
         position: absolute;

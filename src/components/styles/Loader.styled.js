@@ -14,10 +14,7 @@ export const StyledLoader = styled(Loader)`
         height: 5rem;
     }
 
-    .frosted{
-        background-color: ${({theme}) => theme.colors.transparent.lightblue};
-        backdrop-filter: blur(5px);
-    }
+
     .lds-ring {
         display: inline-block;
         position: relative;

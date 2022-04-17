@@ -46,9 +46,26 @@ const CartContextProvider = ({ children }) => {
         setCart([]);
     }
 
+    const totalCantProds = ()=> {
+        let total = 0;
+        cart.forEach((prod)=>{
+            total += prod.cant;
+        });
+
+        return total;
+    }
+
+    const totalPrice = ()=> {
+        let total = 0;
+        cart.forEach((prod)=>{
+            total += (prod.price*prod.cant);
+        });
+
+        return total;
+    }
 
     return (
-        <Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+        <Provider value={{ cart, addToCart, removeFromCart, clearCart, totalCantProds, totalPrice }}>
             {children}
         </Provider>
     )

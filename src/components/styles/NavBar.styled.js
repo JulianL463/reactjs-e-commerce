@@ -12,7 +12,7 @@ export const StyledBurger = styled(Burger)`
     justify-content: space-around;
     
     div{
-        background-color: ${({theme})=>theme.colors.main};
+        background-color: ${({ theme }) => theme.colors.main};
         height: 4px;
         width: 100%;
         border-radius: 2px;
@@ -25,7 +25,7 @@ export const StyledBurger = styled(Burger)`
 
 
 export const StyledCartWidget = styled(CartWidget)` 
-    color: ${({theme})=>theme.colors.main};
+    color: ${({ theme }) => theme.colors.main};
     div{
         height: 25px;
         width: auto;
@@ -43,7 +43,7 @@ export const Nav = styled.nav`
     align-items: center;
     padding: 5px 1rem;
 
-    background-color: ${({theme}) => theme.colors.transparent.main};
+    background-color: ${({ theme }) => theme.colors.transparent.main};
     backdrop-filter: blur(10px);
 
     ul{
@@ -61,6 +61,25 @@ export const Nav = styled.nav`
     ${StyledCartWidget}{
         order: 2;
         justify-self: right;
+
+        div{
+            position:relative;
+            
+
+            .cantProds{
+                position:absolute;
+                top:44%;
+                left:60%;
+                transform: translate(-50%, -50%);
+                text-align:center;
+                
+                h5{
+                    color:black;
+                    letter-spacing:0;
+                    font-weight: bold;
+                }
+            }
+        }
     }
 
     @media (min-width: 725px){
@@ -75,7 +94,7 @@ export const Nav = styled.nav`
             margin: 0 1rem;
             
             a{
-                color: ${({theme})=>theme.colors.main};
+                color: ${({ theme }) => theme.colors.main};
                 text-decoration: none;
             }
         }

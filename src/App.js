@@ -6,7 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer.jsx';
 import { StyledItemListContainer } from './components/styles/ItemListContainer.styled.js';
 import { Routes, Route } from 'react-router-dom';
 import CartContextProvider from './components/CartContext.jsx';
-
+import { StyledCartContainer } from './components/Cart/styles/CartContainer.styled.js';
 const theme = {
   colors: {
     main: 'white',
@@ -36,7 +36,7 @@ const App = () => {
           <Route path='/' element={<StyledItemListContainer user={user.alias} />} />
           <Route path='/details/:id' element={<ItemDetailContainer />} />
           <Route path='/categories/:id' element={<StyledItemListContainer user={user.alias} />} />
-          <Route path='/cart' element={<h1>Cart</h1>} />
+          <Route path='/cart' element={<StyledCartContainer/>} />
           <Route path='/reactjs-e-commerceJulianLopez/' element={<StyledItemListContainer user={user.alias} />} />
           <Route path='*' element={<h1>Error 404 No se encontró la página</h1>} />
         </Routes>

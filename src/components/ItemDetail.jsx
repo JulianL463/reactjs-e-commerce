@@ -7,14 +7,14 @@ const ItemDetail = ({ className, item }) => {
 
     const { title, prodImg, price, description, stock } = item;
 
-    const { addToCart} = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
 
     const [purchase, setPurchase] = useState({});
 
 
     const onAdd = (cant) => {
 
-        const { prodImg, description, ...purchasedItem } = { ...item, cant: cant };
+        const { description, ...purchasedItem } = { ...item, cant: cant };
 
         setPurchase(purchasedItem);
         addToCart(purchasedItem);
@@ -40,12 +40,7 @@ const ItemDetail = ({ className, item }) => {
                     <div className='itemDescription frosted'>
                         <p>{description}</p>
                     </div>
-                    {!purchase.cant ? <div className='itemCount'>
-                        <StyledItemCount onAdd={onAdd} initial={1} stock={stock} />
-                    </div>
-                        : <Link to='/cart' className='itemBuy frosted'>
-                            <button>COMPRAR</button>
-                        </Link>}
+                    <StyledItemCount onAdd={onAdd} initial={1} stock={stock} purchaseCant={purchase.cant}/>
                 </div>
             </div>
         </div>

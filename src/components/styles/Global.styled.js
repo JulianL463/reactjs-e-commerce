@@ -24,6 +24,14 @@ const GlobalStyles = createGlobalStyle`
     code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     }
+
+    .frosted{
+        background-color: ${({ theme }) => theme.colors.transparent.lightblue};
+        backdrop-filter: blur(5px);
+        box-sizing:border-box;
+        box-shadow: -0px -0px 15px ${({ theme }) => theme.colors.transparent.lightblue} inset;
+        border: 1px solid ${({ theme }) => theme.colors.transparent.lightblue};
+    }
 `
 
 export default GlobalStyles

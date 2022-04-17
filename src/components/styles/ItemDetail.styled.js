@@ -7,7 +7,7 @@ export const StyledItemDetail = styled(ItemDetail)`
     padding: 5px;
     margin:auto;
     
-    color: 1px solid ${({ theme }) => theme.colors.main};
+    color: ${({ theme }) => theme.colors.main};
 
     h2{
         font-size: 2rem;
@@ -21,10 +21,7 @@ export const StyledItemDetail = styled(ItemDetail)`
         font-size: 1.5rem;
     }
 
-    .frosted{
-        background-color: ${({ theme }) => theme.colors.transparent.lightblue};
-        backdrop-filter: blur(5px);
-    }
+
 
     .detailContainer{
 
@@ -77,20 +74,7 @@ export const StyledItemDetail = styled(ItemDetail)`
                 align-items:center;
                 justify-content:center;
             }
-            .itemCount{
-                width:100%;
-                height:100%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                
-                div{
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items:center;
-                }
-            }
+            
             .itemDescription{
                 width:100%;
                 height:100%;
@@ -100,45 +84,7 @@ export const StyledItemDetail = styled(ItemDetail)`
                     text-align: justify;
                 }
             }
-            .itemCart{
-                width:100%;
-                height:100%;
-                text-align:center;
-
-                .addToCartIcon{
-                    width:2.5rem;
-                }
-            }
-            .itemBuy{
-                width:100%;
-                height:100%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-
-                text-decoration: none;
-
-                margin: 0;
-                button{
-                    cursor: pointer;
-                    width: 100%;
-                    height: 100%;
-
-                    font-family: 'Saira Condensed','Inria Sans', 'Times New Roman', sans-serif, -apple-system, BlinkMacSystemFont;//'Saira Condensed',
-                    font-size: 2rem;
-                    letter-spacing: 0.2rem;
-                   
-
-                    border: none;
-                    color: ${({ theme }) => theme.colors.main};
-                    background:none;
-                    
-                    &:active{
-                        font-size: 1.9rem;
-                    }
-                }
-                
-            }
+            
         }   
 
         @media (min-width: 1100px){
