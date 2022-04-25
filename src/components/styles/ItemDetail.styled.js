@@ -36,17 +36,27 @@ export const StyledItemDetail = styled(ItemDetail)`
             grid-gap: 5px;
 
             margin-bottom: 5px;
+
+            max-height:40rem;
    
-            img:first-child{
+            
+            div{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+
+                background-color:black;
+                box-sizing:border-box;
+                border: 1px solid ${({ theme }) => theme.colors.transparent.lightblue};
+                overflow: hidden;
+            }
+            div:first-child{
                 grid-column: 1 / 5 ;
                 grid-row: 1 / 4;
             }
             img{
-                width:100%;
-                height:100%;
-                background-color:black;
-                box-sizing:border-box;
-                border: 1px solid ${({ theme }) => theme.colors.transparent.lightblue};
+                height:70%;
+                width:auto;
             }
             
         }
@@ -57,9 +67,12 @@ export const StyledItemDetail = styled(ItemDetail)`
             grid-template-rows: 1fr 1fr 4fr 1fr;
             grid-gap: 5px;
 
+            max-height:40rem;
+
+            
             .itemTitle{
                 width:100%;
-                height:100%;
+                height:100px;
 
                 display:flex;
                 align-items:center;
@@ -68,7 +81,7 @@ export const StyledItemDetail = styled(ItemDetail)`
             }
             .itemPrice{
                 width:100%;
-                height:100%;
+                height:auto;
 
                 display:flex;
                 align-items:center;
@@ -77,7 +90,7 @@ export const StyledItemDetail = styled(ItemDetail)`
             
             .itemDescription{
                 width:100%;
-                height:100%;
+                height:auto;
                 
                 p{
                     padding: 1rem;
@@ -94,11 +107,10 @@ export const StyledItemDetail = styled(ItemDetail)`
                  margin-bottom:0;
                  margin-right: 5px;
                  width:auto;
-                 max-height:40rem;
-             }
-             .dataContainer{
-                 width:auto;
-                 max-height:40rem;
+
+                img{
+                    height:100%;
+                }
              }
              
         }

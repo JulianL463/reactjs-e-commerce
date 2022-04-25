@@ -5,6 +5,7 @@ const Item = ({ className, product, initial }) => {
 
     const { id, title, prodImg, price } = product;
 
+
     return (
         <div className={className}>
             <Link to={`/details/${id}`} className="detailLink"><img src={prodImg} alt="" /></Link>

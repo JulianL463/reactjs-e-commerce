@@ -2,46 +2,64 @@ import { React, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import StyledItemList from './styles/ItemList.styled';
 import { StyledLoader } from './styles/Loader.styled';
+import { db } from '../firebase/firebase';
+import { collection, query, getDocs, where } from 'firebase/firestore';
 
-const ItemListContainer = ({className, user}) => {
+const ItemListContainer = ({ className, user }) => {
 
-  const {id} = useParams();
+  const { category } = useParams();
 
-  const [products, setproducts] = useState([]);
-  const [show, setshow] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    setshow(false);
+    setShow(false);
 
-    fetch('https://run.mocky.io/v3/5100376d-bbab-416e-8127-65ad2344d6a4')
-    .then((res)=> res.json())
-    .then((prods)=>{
-      if(prods.some(prod => prod.category === id)){
-        setproducts(prods.filter(prod => prod.category === id));
-      }else{
-        setproducts(prods);
-      }
-    })
-    .catch(()=>{
-      console.log('error, no se encontraron productos');
-    })
-    .finally(()=>{
-      setshow(true);
-    })
-  }, [id]);
-  
+    const productsCollection = collection(db, 'ItemCollection');
+
+    const filtered = category !== undefined 
+    ? query(productsCollection, where('category', '==', `${category}`)) 
+    : productsCollection;
+
+    getDocs(filtered)
+      .then((result) => {
+        const docs = result.docs;
+        const list = docs.map((product) => {
+
+          const id = product.id;
+
+          const productWithId = {
+            id,
+            ...product.data()
+          }
+
+          return productWithId;
+
+        })
+
+        setProducts(list);
+      })
+      .catch(() => {
+        console.log('error, no se encontraron productos');
+      })
+      .finally(() => {
+        setShow(true);
+      })
+
+  }, [category]);
+
 
   const onAdd = (cant) => {
-    cant>1 ? 
-    console.log(`Se agregaron ${cant} productos al carrito`)
-    :console.log(`Se agrego ${cant} producto al carrito`);
+    cant > 1 ?
+      console.log(`Se agregaron ${cant} productos al carrito`)
+      : console.log(`Se agrego ${cant} producto al carrito`);
   }
 
   return (
     <div className={className}>
       <h2>Bienvenido {user}!</h2>
-      {show ? <StyledItemList products={products} onAdd= {onAdd} /> 
-      : <StyledLoader/>}
+      {show ? <StyledItemList products={products} onAdd={onAdd} />
+        : <StyledLoader />}
     </div>
   )
 }

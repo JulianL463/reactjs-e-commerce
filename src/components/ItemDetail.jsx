@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom';
 import { StyledItemCount } from './styles/ItemCount.styled';
-import { CartContext } from './CartContext';
+import { CartContext } from '../context/CartContext';
 
 const ItemDetail = ({ className, item }) => {
 
@@ -28,11 +27,11 @@ const ItemDetail = ({ className, item }) => {
         <div className={className}>
             <div className='detailContainer'>
                 <div className='imgsContainer'>
-                    <img src={prodImg} alt="" />
-                    <img src={prodImg} alt="" />
-                    <img src={prodImg} alt="" />
-                    <img src={prodImg} alt="" />
-                    <img src={prodImg} alt="" />
+                    <div><img src={prodImg} alt="" /></div>
+                    <div><img src={prodImg} alt="" /></div>
+                    <div><img src={prodImg} alt="" /></div>
+                    <div><img src={prodImg} alt="" /></div>
+                    <div><img src={prodImg} alt="" /></div>
                 </div>
                 <div className='dataContainer'>
                     <div className='itemTitle frosted'><h2>{title}</h2></div>
