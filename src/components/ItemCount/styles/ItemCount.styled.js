@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ItemCount from "../ItemCount";
+import ItemCount from "../ItemCount"
 
 export const StyledItemCount = styled(ItemCount)`
 

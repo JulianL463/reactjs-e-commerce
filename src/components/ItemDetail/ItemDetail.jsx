@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { StyledItemCount } from './styles/ItemCount.styled';
-import { CartContext } from '../context/CartContext';
+import { StyledItemCount  } from '../ItemCount/styles/ItemCount.styled';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({ className, item }) => {
 

@@ -25,6 +25,11 @@ const GlobalStyles = createGlobalStyle`
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     }
 
+    input{
+        font-family: 'Saira Condensed','Inria Sans', 'Times New Roman', sans-serif, -apple-system, BlinkMacSystemFont;
+        letter-spacing: 0.2rem;
+    }
+
     .frosted{
         background-color: ${({ theme }) => theme.colors.transparent.lightblue};
         backdrop-filter: blur(5px);

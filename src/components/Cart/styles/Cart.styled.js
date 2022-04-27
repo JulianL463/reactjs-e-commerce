@@ -29,7 +29,6 @@ export const StyledCart = styled(Cart)`
         
         font-size: 1.5rem;
 
-
         button{
             grid-column: 1 / 3;
             cursor: pointer;
@@ -45,10 +44,13 @@ export const StyledCart = styled(Cart)`
             }
         }
 
+        .sumaryFinishButton{
+            grid-column: 1 / 3;
+        }
+
         .sumaryClearButton{
             grid-row: 5 / 6;
         }
-
     }
 
     

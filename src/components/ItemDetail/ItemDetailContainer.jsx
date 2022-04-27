@@ -2,8 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { StyledItemDetail } from "./styles/ItemDetail.styled";
-import { StyledLoader } from "./styles/Loader.styled";
-import { db } from "../firebase/firebase";
+import { StyledLoader } from "../Loader/styles/Loader.styled";
+import { db } from "../../firebase/firebase";
 import { collection, doc, getDoc } from "firebase/firestore";
 
 

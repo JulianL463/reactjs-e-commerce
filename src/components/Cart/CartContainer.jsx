@@ -17,14 +17,13 @@ const CartContainer = ({ className }) => {
                     removeFromCart={removeFromCart}
                     totalCantProds={totalCantProds}
                     totalPrice={totalPrice}
-                    clearCart={clearCart}
-                />
-                : <div className={className}>
-                    <div className='emptyCart frosted'>
-                        <h2>No hay productos en el carrito, por favor seleccione alguno.</h2>
-                        <Link className='back' to={'/'}><div className='frosted'>Volver a productos</div></Link>
-                    </div>
-                </div>}
+                    clearCart={clearCart} />
+
+                : <div className={`${className} frosted`}>
+                    <h2>No hay productos en el carrito, por favor seleccione alguno.</h2>
+                    <Link className='back' to={'/'}><div className='frosted'>Volver a productos</div></Link>
+                </div>
+            }
         </>
     )
 }

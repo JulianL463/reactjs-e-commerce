@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import StyledItemList from './styles/ItemList.styled';
-import { StyledLoader } from './styles/Loader.styled';
-import { db } from '../firebase/firebase';
+import { StyledLoader } from '../Loader/styles/Loader.styled';
+import { db } from '../../firebase/firebase'; 
 import { collection, query, getDocs, where } from 'firebase/firestore';
 
 const ItemListContainer = ({ className, user }) => {
