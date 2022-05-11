@@ -18,9 +18,6 @@ const ItemDetail = ({ className, item }) => {
         setPurchase(purchasedItem);
         addToCart(purchasedItem);
 
-
-        cant > 1 ? console.log(`Se agregaron ${cant} productos al carrito`)
-            : console.log(`Se agrego ${cant} producto al carrito`);
     }
 
     return (
