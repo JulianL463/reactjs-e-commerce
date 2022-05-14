@@ -28,7 +28,7 @@ npm start
 
 ## Usage
 
-![Navigation demo](https://iili.io/Ww66CJ.gif)
+![Navigation demo](https://media.giphy.com/media/J1NO0nSKs1uNOcnVs1/giphy.gif)
 
 ## Dependencies
 
