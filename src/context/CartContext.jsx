@@ -1,4 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
+import {toast} from 'react-hot-toast'
+
 
 export const CartContext = createContext();
 const { Provider } = CartContext;
@@ -7,11 +9,14 @@ const CartContextProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
-    //Provisorio para testing//
+    
     useEffect(() => {
-        console.log(cart);
+        getCartLocal();
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('cart',JSON.stringify(cart));
     }, [cart]);
-    ///////////////////////////
 
     const isInCart = (id) => {
         return cart.some((item) => item.id === id);
@@ -33,17 +38,39 @@ const CartContextProvider = ({ children }) => {
             setCart([...cart, item]);
         }
 
-        item.cant > 1 ? console.log(`Se agregaron ${item.cant} productos al carrito`)
-            : console.log(`Se agrego ${item.cant} producto al carrito`);
+        toast.success(`se agregó el ${item.title} al carrito`, {
+            position: 'bottom-right',
+            style: {
+                borderRadius: '5px',
+                background: '#fff',
+                color: '#000000',
+            },
+        });
 
     }
 
     const removeFromCart = (item) => {
         setCart(cart.filter((itemInCart) => itemInCart.id !== item.id))
+        toast.success(`se eliminó el producto del carrito`, {
+            position: 'bottom-right',
+            style: {
+                borderRadius: '5px',
+                background: '#fff',
+                color: '#000000',
+            },
+        });
     }
 
     const clearCart = () => {
         setCart([]);
+        toast.success(`se vació el carrito`, {
+            position: 'bottom-right',
+            style: {
+                borderRadius: '5px',
+                background: '#fff',
+                color: '#000000',
+            },
+        });
     }
 
     const totalCantProds = ()=> {
@@ -62,6 +89,10 @@ const CartContextProvider = ({ children }) => {
         });
 
         return total;
+    }
+
+    const getCartLocal = ()=> {
+        setCart(JSON.parse(localStorage.getItem('cart')));
     }
 
     return (

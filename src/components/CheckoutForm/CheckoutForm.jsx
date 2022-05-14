@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { UserContext } from '../../context/UserContext';
 
 const CheckoutForm = ({ className, finishPurchase }) => {
 
-
+  const {user} = useContext(UserContext);
 
   const handleSubmit = (ev) => {
 
@@ -35,7 +36,7 @@ const CheckoutForm = ({ className, finishPurchase }) => {
         
         <div>
           <label htmlFor="email">E-mail:</label>
-          <input className='frosted' placeholder='nombre@gmail.com' type="email" name='email' required />
+          <input className='frosted' defaultValue={user.email} placeholder='nombre@gmail.com' type="email" name='email' required />
         </div>
         
         <input className='submitPurchase frosted' type="submit" value="Finalizar compra" />

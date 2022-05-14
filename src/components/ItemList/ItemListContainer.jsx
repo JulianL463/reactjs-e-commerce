@@ -4,6 +4,8 @@ import StyledItemList from './styles/ItemList.styled';
 import { StyledLoader } from '../Loader/styles/Loader.styled';
 import { db } from '../../firebase/firebase'; 
 import { collection, query, getDocs, where } from 'firebase/firestore';
+import {toast} from 'react-hot-toast'
+
 
 const ItemListContainer = ({ className, user }) => {
 
@@ -40,7 +42,14 @@ const ItemListContainer = ({ className, user }) => {
         setProducts(list);
       })
       .catch(() => {
-        console.log('error, no se encontraron productos');
+        toast.error('error, no se encontraron productos', {
+            position: 'bottom-right',
+            style: {
+                borderRadius: '5px',
+                background: '#fff',
+                color: '#000000',
+            },
+        });
       })
       .finally(() => {
         setShow(true);
@@ -49,16 +58,9 @@ const ItemListContainer = ({ className, user }) => {
   }, [category]);
 
 
-  const onAdd = (cant) => {
-    cant > 1 ?
-      console.log(`Se agregaron ${cant} productos al carrito`)
-      : console.log(`Se agrego ${cant} producto al carrito`);
-  }
-
   return (
     <div className={className}>
-      <h2>Bienvenido {user}!</h2>
-      {show ? <StyledItemList products={products} onAdd={onAdd} />
+      {show ? <StyledItemList products={products}/>
         : <StyledLoader />}
     </div>
   )

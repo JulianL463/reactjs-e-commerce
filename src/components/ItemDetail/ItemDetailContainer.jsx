@@ -5,6 +5,7 @@ import { StyledItemDetail } from "./styles/ItemDetail.styled";
 import { StyledLoader } from "../Loader/styles/Loader.styled";
 import { db } from "../../firebase/firebase";
 import { collection, doc, getDoc } from "firebase/firestore";
+import {toast} from 'react-hot-toast'
 
 
 const ItemDetailContainer = () => {
@@ -29,7 +30,14 @@ const ItemDetailContainer = () => {
       
     })
     .catch(()=>{
-      console.log('error, no se encontraron productos');
+      toast.error('error, no se encontraron productos', {
+        position: 'bottom-right',
+          style: {
+              borderRadius: '5px',
+              background: '#fff',
+              color: '#000000',
+          },
+      });
     })
     .finally(()=>{
       setShow(true);

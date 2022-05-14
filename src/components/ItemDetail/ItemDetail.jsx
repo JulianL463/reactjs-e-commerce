@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { StyledItemCount  } from '../ItemCount/styles/ItemCount.styled';
 import { CartContext } from '../../context/CartContext';
 
+
 const ItemDetail = ({ className, item }) => {
 
     const { title, prodImg, price, description, stock } = item;

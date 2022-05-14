@@ -3,11 +3,14 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './globalStyles/Global.styled.js';
 import NavBar from './components/NavBar/NavBar.jsx';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
-import { StyledItemListContainer } from './components/ItemList/styles/ItemListContainer.styled.js'; 
+import ItemListContainer from './components/ItemList/ItemListContainer.jsx';
 import { Routes, Route } from 'react-router-dom';
 import CartContextProvider from './context/CartContext.jsx';
 import { StyledCartContainer } from './components/Cart/styles/CartContainer.styled.js';
 import Checkout from './components/Checkout/Checkout.jsx';
+import UserContextProvider from './context/UserContext.jsx';
+import { StyledUserNav } from './components/UserNav/styles/UserNav.styles.js';
+import {Toaster} from 'react-hot-toast';
 
 const theme = {
   colors: {
@@ -25,26 +28,28 @@ const theme = {
   }
 }
 
-const user = { name: 'Carlos', surname: 'Perez', alias: ' CarlosP_22' }
-
 const App = () => {
 
 
   return (
     <ThemeProvider theme={theme}>
-      <CartContextProvider>
-        <GlobalStyles />
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<StyledItemListContainer user={user.alias} />} />
-          <Route path='/details/:id' element={<ItemDetailContainer />} />
-          <Route path='/categories/:category' element={<StyledItemListContainer user={user.alias} />} />
-          <Route path='/cart' element={<StyledCartContainer/>} />
-          <Route path='/checkout' element={<Checkout/>} />
-          <Route path='/reactjs-e-commerceJulianLopez/' element={<StyledItemListContainer user={user.alias} />} />
-          <Route path='*' element={<h1>Error 404 No se encontró la página</h1>} />
-        </Routes>
-      </CartContextProvider>
+      <UserContextProvider>
+        <CartContextProvider>
+          <GlobalStyles />
+          <NavBar />
+          <StyledUserNav/>
+          <Routes>
+            <Route path='/' element={<ItemListContainer/>} />
+            <Route path='/details/:id' element={<ItemDetailContainer />} />
+            <Route path='/categories/:category' element={<ItemListContainer />} />
+            <Route path='/cart' element={<StyledCartContainer/>} />
+            <Route path='/checkout' element={<Checkout/>} />
+            <Route path='/reactjs-e-commerceJulianLopez/' element={<ItemListContainer/>} />
+            <Route path='*' element={<h1>Error 404 No se encontró la página</h1>} />
+          </Routes>
+          <Toaster/>
+        </CartContextProvider>
+      </UserContextProvider>
     </ThemeProvider>
   );
 }

@@ -61,7 +61,7 @@ export const StyledItemCount = styled(ItemCount)`
         width: 100%;
         height: 100%;
 
-        font-family: 'Saira Condensed','Inria Sans', 'Times New Roman', sans-serif, -apple-system, BlinkMacSystemFont;//'Saira Condensed',
+        font-family: 'Saira Condensed','Inria Sans', 'Times New Roman', sans-serif, -apple-system, BlinkMacSystemFont;
         font-size: 2rem;
         letter-spacing: 0.2rem;
         

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext'
 import { StyledCart } from './styles/Cart.styled';
 
+
 const CartContainer = ({ className }) => {
 
     const { cart, removeFromCart, totalCantProds, totalPrice, clearCart } = useContext(CartContext)
 
-    console.log(cart.length);
 
     return (
         <>

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import ItemList from '../ItemList'
 
 const StyledItemList = styled(ItemList)`
-
+    text-align: center;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;

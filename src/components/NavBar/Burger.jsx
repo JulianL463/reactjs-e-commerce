@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Burger = ({className}) => {
+const Burger = ({className, openMenu, open}) => {
   return (
-    <div className={className}>
+    <div className={className} onClick={openMenu} open={open}>
         <div></div>
         <div></div>
         <div></div>
